@@ -1,11 +1,11 @@
 import { defineNuxtConfig } from 'nuxt/config'
-import MyModule from '..'
+import ClarityModule from '..'
 
 export default defineNuxtConfig({
   modules: [
-    MyModule
+    ClarityModule
   ],
-  myModule: {
-    addPlugin: true
+  clarity: {
+    id: ''
   }
 })

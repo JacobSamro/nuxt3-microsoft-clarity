@@ -3,7 +3,8 @@ import { fileURLToPath } from 'url'
 import { defineNuxtModule, addPlugin } from '@nuxt/kit'
 
 export interface ModuleOptions {
-  addPlugin: boolean
+  enablePlugin: boolean
+  id: string
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -12,13 +13,19 @@ export default defineNuxtModule<ModuleOptions>({
     configKey: 'clarity'
   },
   defaults: {
-    addPlugin: true
+    enablePlugin: true,
+    id: null
   },
   setup (options, nuxt) {
-    if (options.addPlugin) {
-      const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
-      nuxt.options.build.transpile.push(runtimeDir)
-      addPlugin(resolve(runtimeDir, 'plugin'))
+    if (options.enablePlugin) {
+      nuxt.options.app.head.script.push({
+        hid: 'clarity',
+        children: `(function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "${options.id}");`
+      })
     }
   }
 })

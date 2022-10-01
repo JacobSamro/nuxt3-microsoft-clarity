@@ -4,7 +4,8 @@ import { addPlugin, defineNuxtModule, isNuxt2 } from '@nuxt/kit'
 import { Config } from 'clarity-js/types/core'
 
 export interface ModuleOptions extends Config {
-  enablePlugin: boolean
+  enablePlugin: boolean,
+  auto: boolean
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -13,7 +14,8 @@ export default defineNuxtModule<ModuleOptions>({
     configKey: 'clarity'
   },
   defaults: {
-    enablePlugin: true
+    enablePlugin: true,
+    auto: true // enable clarity automatically
   },
   setup (options, nuxt) {
     if (!options.projectId) {
@@ -38,6 +40,7 @@ export default defineNuxtModule<ModuleOptions>({
       }
 
       nuxt.options.runtimeConfig.public.clarity = {
+        auto: options.auto,
         projectId: options.projectId
       }
 

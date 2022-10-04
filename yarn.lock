@@ -471,7 +471,7 @@
     pathe "^0.2.0"
     unbuild "^0.6.7"
 
-"@nuxt/schema@3.0.0-rc.11", "@nuxt/schema@^3.0.0-rc.11":
+"@nuxt/schema@3.0.0-rc.11":
   version "3.0.0-rc.11"
   resolved "https://registry.npmjs.org/@nuxt/schema/-/schema-3.0.0-rc.11.tgz"
   integrity sha512-EIBYQeBxJ+JZ8RjPRGaXM9+vtWMHQ4HsqZIw5a+p6hqRLGf53fHANT4vjMQZA4fAYBnJZJI7dB/OXkfyb/kikA==
@@ -3987,7 +3987,7 @@ nuxi@3.0.0-rc.11:
   optionalDependencies:
     fsevents "~2.3.2"
 
-nuxt@^3.0.0-rc.11:
+nuxt@3.0.0-rc.11:
   version "3.0.0-rc.11"
   resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-3.0.0-rc.11.tgz#08f9861b71b68e322bf8f732f8b28956bb92219f"
   integrity sha512-I0wyxPHnUoJBWoROKUx91PLKaAFZ/TsxSpcm3/jn/Ysq2RGU5Q3o9AzqT0YcXW4rgH35QPFvGpqopU9X0vS7Qw==
